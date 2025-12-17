@@ -1,0 +1,21 @@
+.cards {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.card {
+  width: 180px;
+  padding: 25px;
+  background: #151720;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(160, 90, 255, 0.25);
+  color: white;
+  font-size: 18px;
+  transition: 0.3s;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 22px rgba(160, 90, 255, 0.55);
+  }
+}
