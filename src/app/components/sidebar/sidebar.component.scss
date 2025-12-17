@@ -1,0 +1,41 @@
+.sidebar {
+  width: 240px;
+  height: 100vh;
+  background: #11121a;
+  padding: 20px;
+  border-right: 1px solid rgba(150, 80, 255, 0.3);
+  box-shadow: 4px 0 20px rgba(140, 50, 255, 0.15);
+
+  h2 {
+    color: #c18aff;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    .group-title {
+      margin-top: 25px;
+      color: #6a6a6a;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    li a {
+      color: #dcdcdc;
+      text-decoration: none;
+      font-size: 16px;
+      display: block;
+      padding: 8px 0;
+      transition: 0.2s;
+
+      &:hover {
+        color: #b675ff;
+        text-shadow: 0 0 8px rgba(183, 117, 255, 0.8);
+      }
+    }
+  }
+}
