@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { SidebarComponent } from '../sidebar/sidebar.component';
 import { HeaderComponent } from '../header/header.component';
-import { CardsComponent } from '../cards/cards.component';
+import { CarouselComponent } from '../carousel/carousel.component';
+
 
 @Component({
   selector: 'app-first-components',
@@ -9,9 +11,10 @@ import { CardsComponent } from '../cards/cards.component';
   templateUrl: './first-components.component.html',
   styleUrls: ['./first-components.component.scss'],
   imports: [
+    CommonModule,
     SidebarComponent,
     HeaderComponent,
-    CardsComponent,
-  ]
+    CarouselComponent
+]
 })
 export class FirstComponentsComponent {}

@@ -1,22 +1,50 @@
-<aside class="sidebar">
-  <div class="title">MENU</div>
+<!-- Botão de abrir -->
+<button class="menu-btn" (click)="toggle()">
+  <img src="assets/icons/menu.svg" />
+  <span>Produtos</span>
+</button>
 
-  <nav>
-    <ul>
-      <li class="group">APPLE</li>
-      <li><a href="#">iPhone</a></li>
-      <li><a href="#">Apple Watch</a></li>
-      <li><a href="#">iPad</a></li>
+<!-- backdrop -->
+<div class="overlay" *ngIf="isOpen" (click)="toggle()"></div>
 
-      <li class="group">SAMSUNG</li>
-      <li><a href="#">Linha S</a></li>
-      <li><a href="#">Linha A</a></li>
-      <li><a href="#">Linha M</a></li>
-      <li><a href="#">Tablets</a></li>
-      <li><a href="#">Smart Watch</a></li>
+<!-- sidebar -->
+<nav class="sidebar" [class.open]="isOpen">
 
-      <li class="group">OUTROS</li>
-      <li><a href="#">Diversos</a></li>
-    </ul>
-  </nav>
-</aside>
+  <button class="close-btn" (click)="toggle()">×</button>
+
+  <!-- Grupo Apple -->
+  <div class="category">
+    <img src="assets/icons/apple.svg" class="icon"/>
+    <span>Apple</span>
+  </div>
+  <ul>
+    <li (click)="selectBrand('Apple')">iPhone</li>
+    <li (click)="selectBrand('Apple')">Apple Watch</li>
+    <li (click)="selectBrand('Apple')">iPad</li>
+  </ul>
+  <div class="divider"></div>
+
+  <!-- Samsung -->
+  <div class="category">
+    <img src="assets/icons/samsung.svg" class="icon"/>
+    <span>Samsung</span>
+  </div>
+  <ul>
+    <li (click)="selectBrand('Samsung')">Linha S</li>
+    <li (click)="selectBrand('Samsung')">Linha A</li>
+    <li (click)="selectBrand('Samsung')">Linha M</li>
+    <li (click)="selectBrand('Samsung')">Tablets</li>
+    <li (click)="selectBrand('Samsung')">Smart Watch</li>
+  </ul>
+  <div class="divider"></div>
+
+  <!-- Outros -->
+  <div class="category">
+    <img src="assets/icons/others.svg" class="icon"/>
+    <span>Outros</span>
+  </div>
+  <ul>
+    <li (click)="selectBrand(null)">Diversos</li>
+  </ul>
+  
+</nav>

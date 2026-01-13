@@ -1,0 +1,17 @@
+<!-- As tags <swiper-container> e <swiper-slide> foram registradas globalmente
+  no main.ts via register()-->
+<swiper-container
+  slides-per-view="3"
+  space-between="16"
+>
+
+  <!-- Geramos um slide para cada produto filtrado.
+    filtered() é um computed Signal exposto pelo ProductsService.
+    Ele reavalia automaticamente quando a marca muda, acionada pelo Sidebar.-->
+  <swiper-slide *ngFor="let p of service.filtered()">
+
+    <!--Cada slide renderiza um card de produto. -->
+    <app-cards [product]="p"></app-cards>
+
+  </swiper-slide>
+</swiper-container>
