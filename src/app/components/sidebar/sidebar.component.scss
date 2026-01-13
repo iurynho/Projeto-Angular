@@ -1,41 +1,102 @@
+/* Botão do menu */
+.menu-btn {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #202530;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 10px;
+  cursor: pointer;
+  z-index: 15;
+  font-size: .95rem;
+}
+
+/* backdrop */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  z-index: 14;
+}
+
+/* sidebar */
 .sidebar {
-  width: 240px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
   height: 100vh;
-  background: #11121a;
+  background: #14171f;
+  color: white;
   padding: 20px;
-  border-right: 1px solid rgba(150, 80, 255, 0.3);
-  box-shadow: 4px 0 20px rgba(140, 50, 255, 0.15);
+  padding-top: 50px;
+  transform: translateX(-100%);
+  transition: transform .28s ease;
+  overflow-y: auto;
+  z-index: 16;
+}
 
-  h2 {
-    color: #c18aff;
-    font-size: 20px;
-    margin-bottom: 20px;
-  }
+.sidebar.open {
+  transform: translateX(0);
+}
 
-  ul {
-    list-style: none;
-    padding: 0;
+/* botão de fechar */
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
 
-    .group-title {
-      margin-top: 25px;
-      color: #6a6a6a;
-      font-size: 12px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
+/* categorias */
+.category {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 8px 0;
+}
 
-    li a {
-      color: #dcdcdc;
-      text-decoration: none;
-      font-size: 16px;
-      display: block;
-      padding: 8px 0;
-      transition: 0.2s;
+/* ícones */
+.icon {
+  width: 22px;
+  opacity: .9;
+}
 
-      &:hover {
-        color: #b675ff;
-        text-shadow: 0 0 8px rgba(183, 117, 255, 0.8);
-      }
-    }
-  }
+/* itens */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 8px 32px;
+}
+
+li {
+  cursor: pointer;
+  padding: 6px 0;
+  font-size: .95rem;
+  color: #d2d2d2;
+  transition: .15s;
+}
+
+li:hover {
+  color: white;
+  transform: translateX(4px);
+}
+
+/* divisor */
+.divider {
+  height: 1px;
+  width: 100%;
+  background: rgba(255,255,255,.15);
+  margin: 12px 0;
 }
